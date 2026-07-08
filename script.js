@@ -18,7 +18,7 @@ function confirmarPresenca() {
     const mensagem = 
     "Olá! Confirmo minha presença no aniversário de 15 anos da Júlia Moreira 💙✨";
     
-    const telefone = "55SEUNUMERO"; // coloque o WhatsApp que receberá as confirmações
+    const telefone = "62992610754" coloque o WhatsApp que receberá as confirmações
 
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 

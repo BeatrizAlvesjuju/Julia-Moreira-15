@@ -140,3 +140,152 @@ E os botões precisam chamar as funções:
 Também vi na imagem que o GitHub Pages estava dizendo que o repositório estava vazio. Depois de colocar esses 3 arquivos (`index.html`, `style.css`, `script.js`) e fazer o **Commit**, ele já permitirá publicar o convite.
 
 Posso também montar para você o **`index.html` completo do convite cinematográfico azul floral da Júlia com todos esses botões funcionando** para você apenas copiar no GitHub.
+// ================================
+// CONVITE JÚLIA MOREIRA - 15 ANOS
+// Script de efeitos especiais
+// ================================
+
+
+// CONTADOR REGRESSIVO
+function atualizarContador() {
+
+    const dataEvento = new Date("September 27, 2026 12:00:00").getTime();
+
+    const agora = new Date().getTime();
+
+    const distancia = dataEvento - agora;
+
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+
+    const contador = document.getElementById("contador");
+
+
+    if (contador) {
+
+        contador.innerHTML = `
+        <div class="tempo">
+            <strong>${dias}</strong>
+            <span>Dias</span>
+        </div>
+
+        <div class="tempo">
+            <strong>${horas}</strong>
+            <span>Horas</span>
+        </div>
+
+        <div class="tempo">
+            <strong>${minutos}</strong>
+            <span>Min</span>
+        </div>
+
+        <div class="tempo">
+            <strong>${segundos}</strong>
+            <span>Seg</span>
+        </div>
+        `;
+
+    }
+
+}
+
+
+setInterval(atualizarContador,1000);
+atualizarContador();
+
+
+
+// ANIMAÇÃO DE ENTRADA
+
+window.addEventListener("load", () => {
+
+    const convite = document.querySelector(".convite-container");
+
+    if(convite){
+
+        convite.style.opacity = "0";
+        convite.style.transform = "translateY(40px)";
+
+        setTimeout(()=>{
+
+            convite.style.transition = "1.5s ease";
+            convite.style.opacity = "1";
+            convite.style.transform = "translateY(0)";
+
+        },300);
+
+    }
+
+});
+
+
+
+// EFEITO DE BRILHO NAS LETRAS
+
+const nome = document.querySelector(".nome-debutante");
+
+if(nome){
+
+    setInterval(()=>{
+
+        nome.style.textShadow =
+        "0 0 15px #ffffff, 0 0 25px #bcd2ee";
+
+        setTimeout(()=>{
+
+            nome.style.textShadow =
+            "1px 1px 2px rgba(255,255,255,0.8)";
+
+        },800);
+
+
+    },3000);
+
+}
+
+
+
+// CONFIRMAÇÃO DE PRESENÇA
+
+const confirmar = document.querySelector(".btn-confirmar");
+
+
+if(confirmar){
+
+    confirmar.addEventListener("click",()=>{
+
+        console.log(
+        "Abrindo confirmação de presença da Júlia Moreira"
+        );
+
+    });
+
+}
+
+
+
+// ANIMAÇÃO DOS BOTÕES
+
+const botoes = document.querySelectorAll(".opcao-botao");
+
+
+botoes.forEach((botao,index)=>{
+
+    botao.style.opacity="0";
+    botao.style.transform="translateY(20px)";
+
+
+    setTimeout(()=>{
+
+        botao.style.transition="0.8s ease";
+        botao.style.opacity="1";
+        botao.style.transform="translateY(0)";
+
+    },800 + (index*200));
+
+
+});
